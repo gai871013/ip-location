@@ -17,15 +17,31 @@ use Gai871013\IpLocation\IpLocation;
 $ipLocation = new IpLocation();
 
 // url
-$url = 'https://www.achais.com';
+$url = 'https://www.baidu.com';
 $ip = '127.0.0.1';
 // 使用域名国家&运营商
 $result = $ipLocation->getLocation($url);
-print_r($result);
+dd($result);
+
+array:5 [▼
+  "ip" => "61.135.169.125"
+  "beginip" => "61.135.169.0"
+  "endip" => "61.135.169.255"
+  "country" => "北京市"
+  "area" => "北京百度网讯科技有限公司联通节点"
+]
 
 // 使用IP地址国家&运营商
 $result = $ipLocation->getLocation($ip);
-print_r($result);
+dd($result);
+
+array:5 [▼
+  "ip" => "127.0.0.1"
+  "beginip" => "127.0.0.1"
+  "endip" => "127.0.0.1"
+  "country" => "本机地址"
+  "area" => ""
+]
 ```
 
 ## Contributing
