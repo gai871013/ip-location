@@ -21,7 +21,7 @@ $url = 'https://www.baidu.com';
 $ip = '127.0.0.1';
 // 使用域名国家&运营商
 $result = $ipLocation->getLocation($url);
-dd($result);
+dump($result);
 
 array:5 [▼
   "ip" => "61.135.169.125"
@@ -33,7 +33,7 @@ array:5 [▼
 
 // 使用IP地址国家&运营商
 $result = $ipLocation->getLocation($ip);
-dd($result);
+dump($result);
 
 array:5 [▼
   "ip" => "127.0.0.1"
