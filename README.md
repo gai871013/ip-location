@@ -14,18 +14,18 @@ $ composer require gai871013/ip-location -vvv
 ```php
 use Gai871013\IpLocation\IpLocation;
 
+$ipLocation = new IpLocation();
 
-$shortUrl = new ShortUrl($config);
-
-// 长链接 -> 短链接
-$long_url = 'https://www.achais.com';
-$result = $shortUrl->shorten($long_url);
+// url
+$url = 'https://www.achais.com';
+$ip = '127.0.0.1';
+// 使用域名国家&运营商
+$result = $ipLocation->getLocation($url);
 print_r($result);
 
-// 短链接 -> 长链接
-$short_url = 'https://dwz.cn/ZzVmHQZa';
-$result = $shortUrl->expand($short_url);
-var_dump($result);
+// 使用IP地址国家&运营商
+$result = $ipLocation->getLocation($ip);
+print_r($result);
 ```
 
 ## Contributing
