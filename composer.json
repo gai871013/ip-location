@@ -1,0 +1,33 @@
+{
+    "name": "gai871013/ip-location",
+    "description": "IP地址",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "王改朝",
+            "email": "wang.gaichao@163.com"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "^8.2",
+        "mockery/mockery": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gai871013\\IpLocation\\": "src"
+        }
+    },
+    "extra": {
+    "laravel": {
+        "providers": [
+            "Gai871013\\IpLocation\\ServiceProvider"
+        ],
+        "aliases": {
+            "IpLocation": "Gai871013\\IpLocation\\IpLocation"
+        }
+
+    }
+},
+    "require-dev": {
+    }
+}
