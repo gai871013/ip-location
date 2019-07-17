@@ -21,7 +21,7 @@
                 "Gai871013\\IpLocation\\ServiceProvider"
             ],
             "aliases": {
-                "IpLocation": "Gai871013\\IpLocation\\IpLocation"
+                "IpLocation": "Gai871013\\IpLocation\\Facades\\IpLocation"
             }
         }
     },

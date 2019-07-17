@@ -27,12 +27,12 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
             return new IpLocation();
         });
 
-        $this->app->alias(IpLocation::class, 'ipLocation');
+        $this->app->alias(IpLocation::class, 'IpLocation');
     }
 
 
     public function provides()
     {
-        return [IpLocation::class, 'ipLocation'];
+        return [IpLocation::class, 'IpLocation'];
     }
 }
