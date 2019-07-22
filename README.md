@@ -11,8 +11,7 @@ $ composer require gai871013/ip-location -vvv
 
 ## 使用方式
 ### 在Laravel中使用
-1. 在 `config/app.php` 注册 ServiceProvider 和 Facade (Laravel 5.5 + 无需手动注册)
-
+1.在 `config/app.php` 注册 ServiceProvider 和 Facade (Laravel 5.5 + 无需手动注册)
 ```php
 'providers' => [
     // ...
@@ -23,8 +22,7 @@ $ composer require gai871013/ip-location -vvv
     'IpLocation' => Gai871013\IpLocation\Facades\IpLocation::class,
 ],
 ```
-
-2. 使用：
+2.使用：
 
 ```php
 
@@ -33,6 +31,21 @@ use Gai871013\IpLocation\Facades\IpLocation;
     // ...
     dump(app('IpLocation')->getLocation('www.wc87.com'));
     dd(IpLocation::getLocation('8.8.4.4'));
+    array:5 [▼
+      "ip" => "101.200.45.167"
+      "beginip" => "101.200.0.0"
+      "endip" => "101.201.255.255"
+      "country" => "北京市"
+      "area" => "阿里云BGP数据中心"
+    ]
+
+    array:5 [▼
+      "ip" => "8.8.4.4"
+      "beginip" => "8.8.4.4"
+      "endip" => "8.8.4.4"
+      "country" => "美国"
+      "area" => "加利福尼亚州圣克拉拉县山景市谷歌公司DNS服务器"
+    ]
     // ...
 ```
 ### 基本使用
