@@ -1,6 +1,6 @@
 <h1 align="center"> ip-location </h1>
 
-<p align="center"> 纯真IP库(更新至2019-07-20).</p>
+<p align="center"> 纯真IP库(更新至2019-10-20).</p>
 
 
 ## 安装
