@@ -1,6 +1,7 @@
 <h1 align="center"> ip-location </h1>
 
-<p align="center"> 纯真IP库(更新至2019-10-20).</p>
+<p align="center"> 纯真IP库(更新至2020-05-15).</p>
+<p align="center"> 记录总数：524760条</p>
 
 
 ## 安装
