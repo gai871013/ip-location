@@ -1,15 +1,21 @@
 {
     "name": "gai871013/ip-location",
     "description": "IP地址",
+    "version": "1.0.7",
+    "keywords": [
+        "ip",
+        "location",
+        "IP地址",
+        "IP归属地"
+    ],
     "license": "MIT",
     "authors": [
         {
-            "name": "王改朝",
+            "name": "王朝",
             "email": "wang.gaichao@163.com"
         }
     ],
-    "require": {
-    },
+    "require": {},
     "autoload": {
         "psr-4": {
             "Gai871013\\IpLocation\\": "src"
