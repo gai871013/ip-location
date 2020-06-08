@@ -2,6 +2,7 @@
 
 <p align="center"> 纯真IP地址库(更新至2020-06-05),composer包(解析QQWay.dat).</p>
 <p align="center"> 记录总数：524993条</p>
+<p align="center"> 2020-06-08 17:34</p>
 
 
 ## 安装
