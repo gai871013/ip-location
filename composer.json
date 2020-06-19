@@ -1,7 +1,7 @@
 {
     "name": "gai871013/ip-location",
     "description": "纯真IP地址,composer包(解析QQWay.dat)",
-    "version": "1.0.10",
+    "version": "1.0.8",
     "keywords": [
         "ip",
         "location",
