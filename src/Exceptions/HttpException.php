@@ -1,6 +1,4 @@
 <?php
-
-
 namespace Gai871013\IpLocation\Exceptions;
 
 
