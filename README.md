@@ -1,8 +1,8 @@
 <h1 align="center"> ip-location 纯真IP地址库 </h1>
-<p align="center"> 纯真IP地址库(更新至2020-07-05),composer包(解析QQWay.dat).</p>
-<p align="center"> 记录总数：525120条</p>
-
+<p align="center"> 纯真IP地址库(更新至2020-07-10),composer包(解析QQWay.dat).</p>
+<p align="center"> 记录总数：525221条</p
 ## 安装
+
 
 ```shell
 $ composer require gai871013/ip-location -vvv
