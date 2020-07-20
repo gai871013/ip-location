@@ -84,11 +84,12 @@ array:5 [▼
 
 ```php
 # ipip
+$path = 'path-to-ipdb.ipdb' || null;
 
-$city = new Gai871013\IpLocation\ipip\db\City('c:\work\ipdb\city.free.ipdb');
-var_dump($city->find('118.28.1.1', 'CN'));
-var_dump($city->findMap('8.8.8.8', 'CN'));
-var_dump($city->findInfo('127.0.0.1', 'CN'));
+$city = new Gai871013\IpLocation\ipip\db\City($path);
+var_dump($city->find('118.28.1.1'));
+var_dump($city->findMap('8.8.8.8'));
+var_dump($city->findInfo('127.0.0.1'));
 ```
 
 ## Contributing

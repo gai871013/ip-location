@@ -13,6 +13,8 @@ use Gai871013\IpLocation\Exceptions\InvalidArgumentException;
 
 class IpLocation
 {
+    use Input;
+
     /**
      * QQWry.Dat文件指针
      *
@@ -153,22 +155,11 @@ class IpLocation
         if (!$this->fp) {
             throw new InvalidArgumentException('无效的dat文件');
         }            // 如果数据文件没有被正确打开，则直接返回空
-        if (empty($ip)) {
-            $ip = $this->get_client_ip();
-        }
-        if (preg_match('/^(http|https|ftp):\/\/[A-Za-z0-9]+\.[A-Za-z0-9]+[\/=\?%\-&_~`@[\]\’:+!]*([^<>\”])*$/', $ip)) {
-            $parse = parse_url($ip);
-            if (isset($parse['host'])) {
-                $ip = gethostbyname($parse['host']);
-            }
-        } elseif ($ip != $getHostByName = gethostbyname($ip)) {
-            $ip = $getHostByName;
-        }
-
-        if (!preg_match('/^(?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)(?:[.](?:25[0-5]|2[0-4]\d|1\d\d|[1-9]\d|\d)){3}$/', $ip)) {
+        try {
+            $ip = $this->getIp($ip);
+        } catch (InvalidArgumentException $e) {
             throw new InvalidArgumentException('无效的参数：' . $ip . '!');
         }
-
 
         $location['ip'] = $ip;   // 将输入的域名转化为IP地址
         $ip             = $this->packip($location['ip']);   // 将输入的IP地址转化为可比较的IP地址
