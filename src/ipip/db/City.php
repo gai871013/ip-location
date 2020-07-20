@@ -30,7 +30,21 @@ class City
             throw new InvalidArgumentException('无效的参数：' . $ip . '!');
         }
 
-        return $this->reader->find($ip, $language);
+        $return = [
+            'ip'      => $ip,
+            'beginip' => $ip,
+            'endip'   => $ip,
+            'country' => '',
+            'area'    => '',
+        ];
+        $res    = $this->reader->find($ip, $language);
+        $arr    = json_decode(json_encode($res), true);
+        if (isset($res['country_name'])) {
+            $return['country'] .= $arr['country_name'] . ($arr['region_name'] ?? '');
+        } else {
+            $return['country'] .= implode('', $arr);
+        }
+        return $return;
     }
 
     public function findMap($ip, $language)
