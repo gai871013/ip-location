@@ -17,8 +17,11 @@ class City
 
     public $reader = NULL;
 
-    public function __construct($db)
+    public function __construct($db = null)
     {
+        if (is_null($db)) {
+            $db = __DIR__ . '/../../ipipfree.ipdb';
+        }
         $this->reader = new Reader($db);
     }
 
