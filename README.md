@@ -1,6 +1,6 @@
 <h1 align="center"> ip-location 纯真IP地址库 </h1>
-<p align="center"> 纯真IP地址库(更新至2020-07-15),composer包(解析QQWay.dat).</p>
-<p align="center"> 记录总数：525249条</p
+<p align="center"> 纯真IP地址库(更新至2020-07-20),composer包(解析QQWay.dat).</p>
+<p align="center"> 记录总数：525520条</p
 ## 安装
 
 
