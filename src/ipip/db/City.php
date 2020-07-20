@@ -25,7 +25,7 @@ class City
         $this->reader = new Reader($db);
     }
 
-    public function find($ip, $language = 'CN')
+    public function find($ip = '', $language = 'CN')
     {
         try {
             $ip = $this->getIp($ip);
@@ -41,27 +41,7 @@ class City
             'area'    => '',
         ];
         $res    = $this->reader->find($ip, $language);
-        $arr    = json_decode(json_encode($res), true);
-        if (isset($res['country_name'])) {
-            $return['country'] .= $arr['country_name'] . ($arr['region_name'] ?? '');
-        } else {
-            $return['country'] .= implode('', $arr);
-        }
+        $return['country'] .= implode('', $res);
         return $return;
-    }
-
-    public function findMap($ip, $language)
-    {
-        return $this->reader->findMap($ip, $language);
-    }
-
-    public function findInfo($ip, $language)
-    {
-        $map = $this->findMap($ip, $language);
-        if (NULL === $map) {
-            return NULL;
-        }
-
-        return new CityInfo($map);
     }
 }

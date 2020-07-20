@@ -34,4 +34,29 @@ trait Input
 
         return $ip;
     }
+
+
+    public function get_client_ip()
+    {
+        if (isset($_SERVER['HTTP_X_REAL_IP'])) {//nginx 代理模式下，获取客户端真实IP
+            $ip = $_SERVER['HTTP_X_REAL_IP'];
+        } elseif (isset($_SERVER['HTTP_CLIENT_IP'])) {//客户端的ip
+            $ip = $_SERVER['HTTP_CLIENT_IP'];
+        } elseif (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {//浏览当前页面的用户计算机的网关
+            $arr = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
+            $pos = array_search('unknown', $arr);
+            if (false !== $pos) unset($arr[$pos]);
+            $ip = trim($arr[0]);
+        } elseif (isset($_SERVER['REMOTE_ADDR'])) {
+            $ip = $_SERVER['REMOTE_ADDR'];//浏览当前页面的用户计算机的ip地址
+        } else {
+            $ip = null;
+        }
+
+        if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            $ip = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
+            $ip = trim(current($ip));
+        }
+        return $ip;
+    }
 }
