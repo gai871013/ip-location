@@ -12,7 +12,8 @@ $ composer require gai871013/ip-location -vvv
 ### 在Laravel中使用
 1.在 `config/app.php` 注册 ServiceProvider 和 Facade (Laravel 5.5 + 无需手动注册)
 ```php
-'providers' => [
+<?php
+['providers' => [
     // ...
     Gai871013\IpLocation\ServiceProvider::class,
 ],
@@ -20,36 +21,39 @@ $ composer require gai871013/ip-location -vvv
     // ...
     'IpLocation' => Gai871013\IpLocation\Facades\IpLocation::class,
 ],
+]
+?>
 ```
 2.使用：
 
 ```php
-
+<?php
 use Gai871013\IpLocation\Facades\IpLocation;
 
     // ...
     dump(app('IpLocation')->getLocation('www.wc87.com'));
     dd(IpLocation::getLocation('8.8.4.4'));
-    array:5 [▼
-      "ip" => "101.200.45.167"
-      "beginip" => "101.200.0.0"
-      "endip" => "101.201.255.255"
-      "country" => "北京市"
-      "area" => "阿里云BGP数据中心"
-    ]
+    array(
+      "ip" => "101.200.45.167",
+      "beginip" => "101.200.0.0",
+      "endip" => "101.201.255.255",
+      "country" => "北京市",
+      "area" => "阿里云BGP数据中心",
+    );
 
-    array:5 [▼
-      "ip" => "8.8.4.4"
-      "beginip" => "8.8.4.4"
-      "endip" => "8.8.4.4"
-      "country" => "美国"
-      "area" => "加利福尼亚州圣克拉拉县山景市谷歌公司DNS服务器"
-    ]
+    array(
+      "ip" => "8.8.4.4",
+      "beginip" => "8.8.4.4",
+      "endip" => "8.8.4.4",
+      "country" => "美国",
+      "area" => "加利福尼亚州圣克拉拉县山景市谷歌公司DNS服务器",
+    )
     // ...
+?>
 ```
 ### 基本使用
 ```php
-
+<?php
 use Gai871013\IpLocation\IpLocation;
 
 $ipLocation = new IpLocation();
@@ -61,28 +65,30 @@ $ip = '127.0.0.1';
 $result = $ipLocation->getLocation($url);
 dump($result);
 
-array:5 [▼
-  "ip" => "61.135.169.125"
-  "beginip" => "61.135.169.0"
-  "endip" => "61.135.169.255"
-  "country" => "北京市"
-  "area" => "北京百度网讯科技有限公司联通节点"
-]
+array(
+  "ip" => "61.135.169.125",
+  "beginip" => "61.135.169.0",
+  "endip" => "61.135.169.255",
+  "country" => "北京市",
+  "area" => "北京百度网讯科技有限公司联通节点",
+);
 
 // 使用IP地址国家&运营商
 $result = $ipLocation->getLocation($ip);
 dump($result);
 
-array:5 [▼
-  "ip" => "127.0.0.1"
-  "beginip" => "127.0.0.1"
-  "endip" => "127.0.0.1"
-  "country" => "本机地址"
-  "area" => ""
-]
+array(
+  "ip" => "127.0.0.1",
+  "beginip" => "127.0.0.1",
+  "endip" => "127.0.0.1",
+  "country" => "本机地址",
+  "area" => "",
+)
+?>
 ```
 
 ```php
+<?php
 # ipip
 $path = 'path-to-ipdb.ipdb' || null;
 
