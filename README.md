@@ -21,8 +21,7 @@ $ composer require gai871013/ip-location -vvv
     // ...
     'IpLocation' => Gai871013\IpLocation\Facades\IpLocation::class,
 ],
-]
-?>
+];
 ```
 2.使用：
 
@@ -47,9 +46,9 @@ use Gai871013\IpLocation\Facades\IpLocation;
       "endip" => "8.8.4.4",
       "country" => "美国",
       "area" => "加利福尼亚州圣克拉拉县山景市谷歌公司DNS服务器",
-    )
+    );
     // ...
-?>
+
 ```
 ### 基本使用
 ```php
