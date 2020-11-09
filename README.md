@@ -110,3 +110,6 @@ _The code contribution process is not very formal. You just need to make sure th
 ## License
 
 MIT
+
+## Sponsors
+[![JetBrains](./jetbrains.svg )](https://www.jetbrains.com/?from=ip-location)
