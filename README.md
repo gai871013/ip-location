@@ -1,7 +1,7 @@
 <h1 align="center"> ip-location 纯真IP地址库，ipip </h1>
 <p align="center"> 纯真IP地址库,composer包(解析QQWry.dat).</p>
-<p align="center">记录总数：529693条
-更新日期：2022年02月23日</p>
+<p align="center">记录总数：529721条
+更新日期：2022年03月02日</p>
 
 ## 安装
 
